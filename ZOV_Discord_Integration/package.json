@@ -1,0 +1,12 @@
+{
+  "name": "zov-clan-application-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZOV Rust clan application site with secure Discord webhook forwarding",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10131c"><title>ZOV — Вступить в клан Rust</title>
+<style>
+:root{--bg:#0c0f16;--panel:#151a25;--muted:#9aa4b5;--text:#f4f6fb;--accent:#e1a33a;--line:#293244}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(ellipse at 75% 0%,#382719 0,transparent 38%),linear-gradient(135deg,#0c0f16,#111827 65%,#0b1018);color:var(--text);min-height:100vh}
+header{max-width:1100px;margin:auto;padding:26px 24px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:950;letter-spacing:5px}.tag{font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.hero{max-width:1100px;margin:auto;padding:74px 24px 60px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(48px,8vw,86px);line-height:.98;margin:18px 0 22px;letter-spacing:-4px}h1 span{color:var(--accent)}.lead{font-size:18px;line-height:1.7;color:#b7c0cf;max-width:580px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:16px 24px;background:linear-gradient(135deg,#f1bd5c,#ce8526);color:#17120a;font-weight:900;font-size:15px;text-decoration:none;cursor:pointer;box-shadow:0 12px 35px #d18a2b35;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.hero .btn{margin-top:18px}
+.visual{min-height:350px;border:1px solid #ffffff18;border-radius:28px;background:linear-gradient(145deg,#252b36cc,#111722ee);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 30px 90px #0008}.visual:before,.visual:after{content:"";position:absolute;border:1px solid #e1a33a35;border-radius:50%;width:340px;height:340px}.visual:after{width:250px;height:250px}.emblem{z-index:1;width:150px;height:150px;border:2px solid var(--accent);transform:rotate(45deg);display:grid;place-items:center;box-shadow:0 0 60px #d9953530}.emblem b{transform:rotate(-45deg);font-size:48px;letter-spacing:4px;color:var(--accent)}.visual small{position:absolute;bottom:26px;color:#8993a4;letter-spacing:3px;font-size:10px}
+section{max-width:900px;margin:auto;padding:15px 24px 80px}.panel{background:#151a25ef;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,5vw,42px);box-shadow:0 20px 70px #0005}.panel h2{font-size:30px;margin:0 0 10px}.sub{color:var(--muted);line-height:1.6;margin:0 0 28px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:8px}.wide{grid-column:1/-1}label{font-size:13px;font-weight:750;color:#dce2ed}
+input,select,textarea{width:100%;border:1px solid #303b4f;background:#0d121c;color:var(--text);padding:14px 15px;border-radius:11px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #e1a33a1c}select option{background:#0d121c}textarea{min-height:95px;resize:vertical}.hint{font-size:12px;color:#8994a6;line-height:1.5}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}.secondary{background:#252e3e;color:#edf1f7;box-shadow:none;border:1px solid #3a465c}
+#status{display:none;margin-top:22px;padding:16px;border-radius:12px;line-height:1.5}#status.ok{display:block;background:#14251c;border:1px solid #46634f;color:#b7edc4}#status.error{display:block;background:#2a1717;border:1px solid #754141;color:#ffc0c0}
+footer{text-align:center;color:#737f91;padding:0 20px 35px;font-size:12px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:45px;gap:30px}.visual{min-height:250px}form{grid-template-columns:1fr}h1{letter-spacing:-2px}.wide{grid-column:auto}}
+</style></head><body>
+<header><div class="logo">ZOV</div><div class="tag">Rust clan recruitment</div></header>
+<main><div class="hero"><div><div class="eyebrow">Набор в клан открыт</div><h1>СТАНЬ<br>ЧАСТЬЮ <span>ZOV</span></h1><p class="lead">Ищем активных игроков Rust, готовых играть командой, развиваться и вместе добиваться результата. Заполни заявку — и мы получим её в Discord.</p><a class="btn" href="#apply">Подать заявку →</a></div><div class="visual"><div class="emblem"><b>ZOV</b></div><small>DISCIPLINE · TEAMPLAY · SURVIVE</small></div></div>
+<section id="apply"><div class="panel"><h2>Заявка в клан</h2><p class="sub">Ответь на вопросы. После отправки анкета автоматически появится в канале Discord, привязанном к вебхуку ZOV.</p>
+<form id="joinForm">
+<div class="field"><label for="age">Сколько тебе лет?</label><input id="age" name="age" type="number" min="10" max="99" placeholder="Например, 16" required></div>
+<div class="field"><label for="player">Как тебя зовут?</label><input id="player" name="player" maxlength="40" placeholder="Твоё имя или ник" required></div>
+<div class="field"><label for="hours">Сколько часов в Rust?</label><input id="hours" name="hours" type="number" min="0" max="100000" placeholder="Например, 850" required></div>
+<div class="field"><label for="role">Кем хочешь стать в клане?</label><select id="role" name="role" required><option value="">Выбери роль</option><option>Фармер</option><option>ПВП / боец</option><option>Строитель</option><option>Электрик</option><option>Роумер</option><option>Универсал</option><option>Другое / пока не знаю</option></select></div>
+<div class="field wide"><label for="discord">Твой Discord</label><input id="discord" name="discord" maxlength="50" placeholder="Твой Discord username" required><div class="hint">Discord для связи с кланом: <strong>vinzvinz333</strong></div></div>
+<div class="field wide"><label for="about">Пару слов о себе (необязательно)</label><textarea id="about" name="about" maxlength="500" placeholder="Когда обычно играешь, какой у тебя опыт и т.д."></textarea></div>
+<div class="wide actions"><button class="btn" id="submitBtn" type="submit">Отправить заявку</button><span class="hint">Отправка идёт через защищённую серверную часть.</span></div>
+</form><div id="status" role="status" aria-live="polite"></div></div></section></main>
+<footer>ZOV CLAN · RUST · Удачи на вайпе</footer>
+<script>
+const form=document.getElementById('joinForm');
+const statusBox=document.getElementById('status');
+const submitBtn=document.getElementById('submitBtn');
+form.addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!form.reportValidity())return;
+ const d=new FormData(form);
+ const payload={age:d.get('age'),player:d.get('player'),hours:d.get('hours'),role:d.get('role'),discord:d.get('discord'),about:d.get('about')};
+ submitBtn.disabled=true;submitBtn.textContent='Отправляем...';statusBox.className='';statusBox.style.display='none';
+ try{
+  const response=await fetch('/api/applications',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const result=await response.json();
+  if(!response.ok)throw new Error(result.error||'Не удалось отправить заявку.');
+  statusBox.textContent='✓ '+(result.message||'Заявка отправлена!');statusBox.className='ok';statusBox.style.display='block';form.reset();
+ }catch(err){
+  statusBox.textContent='Не получилось отправить: '+err.message;statusBox.className='error';statusBox.style.display='block';
+ }finally{submitBtn.disabled=false;submitBtn.textContent='Отправить заявку';}
+});
+</script></body></html>
